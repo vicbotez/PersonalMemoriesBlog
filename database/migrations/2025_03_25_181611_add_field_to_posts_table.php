@@ -13,7 +13,7 @@ return new class extends Migration
   public function up(): void
   {
     Schema::table('posts', function (Blueprint $table) {
-      $table->string('slug', 254)->unique()->after('title');
+      $table->string('slug', 250)->unique()->after('title');
     });
   }
 
