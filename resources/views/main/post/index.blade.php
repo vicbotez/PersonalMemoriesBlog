@@ -25,7 +25,9 @@
             <a href="{{ route('main.post.tag',$tag->title) }}">{{ $tag->title }}</a> 
           @endforeach
         </div>
+        @if( isset($post->user->name) )
         <div><i class="fa-solid fa-user"></i> {{ $post->user->name }}</div>
+        @endif
         <div><i class="fa-solid fa-calendar-days"></i> {{ $post->created_at }}</div>
       </div>    
 

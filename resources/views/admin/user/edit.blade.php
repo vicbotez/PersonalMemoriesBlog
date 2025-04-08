@@ -49,7 +49,7 @@
                       <label for="roleName" class="form-label">Select User Role</label>
                       <select class="form-select" name="role" id="roleName">
                       @foreach( $roles AS $id => $role )
-                        <option value="{{ $id }}" {{ $id == $user->role || ($id == 1 && $user->role == NULL) ? ' selected' : '' }}>{{ $role }}</option>
+                        <option value="{{ $id }}" {{ $id == $user->role ? ' selected' : '' }}>{{ $role }}</option>
                       @endforeach
                       </select>
 
