@@ -27,6 +27,11 @@ class AppServiceProvider extends ServiceProvider
   public function boot(): void
   {
     
+    // stop CLI (composer, artisan)
+    if (App::runningInConsole()) {
+      return;
+    }
+
     // pagination
     Paginator::useBootstrapFive();
     
