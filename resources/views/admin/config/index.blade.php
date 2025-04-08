@@ -47,9 +47,11 @@
 
                   <div class="mb-3">
                     <label for="blogFavicon" class="form-label">Blog Favicon</label>
+                    @if( isset($config->blog_favicon) )
                     <div class="mb-2">
                       <img src="{{ asset('storage/'.$config->blog_favicon) }}" style="width:32px;height:32px;">
                     </div>
+                    @endif
                     <input class="form-control" type="file" id="blogFavicon" name="blog_favicon" value="">
                   </div>
 
