@@ -29,8 +29,10 @@ class AppServiceProvider extends ServiceProvider
     // pagination
     Paginator::useBootstrapFive();
     
-    // share configurations
-    $config = (Object) Config::all()->pluck('value', 'key')->toArray();
+    if (Schema::hasTable('config')) {
+      // share configurations
+      $config = (Object) Config::all()->pluck('value', 'key')->toArray();
+    }
     View::share('confBlogName', $config->blog_name);
     View::share('confBlogTitle', $config->blog_title);
     View::share('confBlogMetaTitle', $config->blog_meta_title);
@@ -39,6 +41,7 @@ class AppServiceProvider extends ServiceProvider
 
     // share tags
     View::share('tagList', Tag::all());
+
 
   }
 
