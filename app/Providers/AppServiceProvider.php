@@ -41,7 +41,7 @@ class AppServiceProvider extends ServiceProvider
     View::share('confBlogFavicon', $config->blog_favicon ?? '');
 
     // share tags
-    View::share('tagList', Tag::all());
+    View::share('tagList', Tag::all() ?? []);
 
 
   }
