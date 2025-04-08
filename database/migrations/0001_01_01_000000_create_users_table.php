@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('name',128);
             $table->string('email',128)->unique();
             $table->timestamp('email_verified_at')->nullable();
-            $table->string('password',256);
+            $table->string('password');
             $table->unsignedSmallInteger('role')->nullable();
             $table->rememberToken();
             $table->softDeletes();
