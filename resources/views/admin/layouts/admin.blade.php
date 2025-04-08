@@ -14,7 +14,9 @@
     />
     <!--end::Primary Meta Tags-->
 
+    @if (!empty($confBlogFavicon))
     <link rel="icon" type="image/x-icon" href="{{ asset('storage/'.$confBlogFavicon) }}">
+    @endif
 
     <!--begin::Fonts-->
     <link
