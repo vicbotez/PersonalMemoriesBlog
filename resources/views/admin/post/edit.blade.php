@@ -79,7 +79,9 @@
                     <div class="mb-5">
                       <ul class="list-group">
                         <li class="list-group-item list-group-item-info">Notes</li>
-                        <li class="list-group-item">Use:<br>
+                        <li class="list-group-item">Use:
+                          <i id="postCopy" class="ccopy bi bi-copy"></i>
+                          <br>
                         &lt;!--more--&gt;
                         <br>
                         as delimeter</li>

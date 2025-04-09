@@ -123,11 +123,8 @@
               <div class="col-lg-12 col-12">
                 <h3>TO DO</h3>
                 <ul>
-                  <li>disable register</li>
-                  <li>show only yags that have posts</li>
                   <li>add success messages admin:posts/admin:tags/admin:users - on creating or updating data</li>
                   <li>tags: order manually. Display in admin/members area by manual order</li>
-                  <li>Admin: posts: Add/Edit Post - more tag - add a carbon copy option</li>
                   <li>add images from admin</li>
                   <li>get image url and use it in blog post</li>
                   <li>Buy domain on godaddy: .online, .site, .xyz</li>

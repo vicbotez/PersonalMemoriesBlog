@@ -229,6 +229,19 @@
     </script>
     <!--end:Select 2 library -->
 
+    <!-- Admin Post Create OR Post Edit::START -->
+    <script type="text/javascript">
+      (function(){
+        const postcopy = document.querySelector('#postCopy');
+        if (typeof(postcopy) != 'undefined' && postcopy != null){
+          postcopy.addEventListener("click", () => {
+            navigator.clipboard.writeText("<!--more-->");
+          });
+        }
+      })();
+    </script>
+    <!-- Admin Post Create OR Post Edit::END -->
+
   </body>
   <!--end::Body-->
 </html>
