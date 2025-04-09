@@ -229,7 +229,7 @@
     </script>
     <!--end:Select 2 library -->
 
-    <!-- Admin Post Create OR Post Edit::START -->
+    <!-- Admin Post Create OR Post Edit FORM::START -->
     <script type="text/javascript">
       (function(){
         const postcopy = document.querySelector('#postCopy');
@@ -240,7 +240,17 @@
         }
       })();
     </script>
-    <!-- Admin Post Create OR Post Edit::END -->
+    <!-- Admin Post Create OR Post Edit FORM::END -->
+
+    <!--Tags Drag&Drop Sorting::START-->
+    <script src="{{ asset('assets/js/dragdrop.js') }}"></script>
+    <script type="text/javascript">
+      document.addEventListener('DOMContentLoaded', () => {
+        const sorter = new TableRowSorter('#sortable-table');
+      });
+    </script>
+    <!--Tags Drag&Drop Sorting::END-->
+
 
   </body>
   <!--end::Body-->
