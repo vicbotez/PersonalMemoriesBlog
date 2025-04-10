@@ -46,9 +46,30 @@ class TableRowSorter {
 
   handleDragEnd(e) {
     e.target.classList.remove('opacity-50');
+    // Сбор ID в порядке после дропа
+    const neworder = Array.from(this.getRows()).map(tr => tr.dataset.id);
+    this.sendTagOrder(neworder);
   }
 
   getCurrentOrder() {
     return Array.from(this.tbody.querySelectorAll('tr')).map(row => row.innerText.trim());
   }
+
+  // Отправляет порядок на сервер
+  sendTagOrder(order) {
+     fetch('/admin/tags/reorder', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'X-CSRF-TOKEN': window.Laravel.csrfToken // Laravel CSRF
+      },
+      body: JSON.stringify({ order })
+    })
+    //.then(res => res.json())
+    //.then(data => console.log('Порядок сохранен', data))
+    .catch(err => console.error('Ошибка сохранения порядка', err));
+  }
+
+
+
 }

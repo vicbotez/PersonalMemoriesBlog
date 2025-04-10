@@ -15,6 +15,15 @@ class Tag extends Model
   protected $table = 'tags';
   protected $guarded = false;
 
+  
+  // Сортировка по полю order по умолчанию
+  protected static function booted()
+  {
+    static::addGlobalScope('ordered', function ($query) {
+      $query->orderBy('order');
+    });
+  }
+
   public function posts(){
     // related to tag model: Post::class, table: post_tags, foreign pivot key: tag_id, related pivot key: post_id 
     return $this->belongsToMany(Post::class, 'post_tags', 'tag_id', 'post_id' );

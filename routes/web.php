@@ -43,6 +43,7 @@ Route::middleware(['auth','admin'])->prefix('admin')->namespace('App\Http\Contro
     Route::get('/', 'IndexController')->name('admin.tag.index');
     Route::get('/create', 'CreateController')->name('admin.tag.create');
     Route::post('/create', 'StoreController')->name('admin.tag.store');
+    Route::post('/reorder', 'ReorderController')->name('admin.tag.reorder');
     Route::get('/{tag}', 'ShowController')->name('admin.tag.show');
     Route::get('/{tag}/edit', 'EditController')->name('admin.tag.edit');
     Route::patch('/{tag}', 'UpdateController')->name('admin.tag.update');

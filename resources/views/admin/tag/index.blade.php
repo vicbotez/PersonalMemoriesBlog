@@ -52,7 +52,7 @@
                       <tbody id="sortable-table">
 
                         @foreach($tags AS $tag)
-                        <tr class="align-middle"  draggable="true">
+                        <tr class="align-middle" draggable="true" data-id="{{ $tag->id }}">
                           <td>{{ $tag->title }}</td>
                           <td><a href="{{ route('admin.post.tag',$tag->title) }}">{{ $tag->posts_count }}</a></td>
                           <td class="text-end">

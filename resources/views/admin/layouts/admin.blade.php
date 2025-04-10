@@ -243,6 +243,11 @@
     <!-- Admin Post Create OR Post Edit FORM::END -->
 
     <!--Tags Drag&Drop Sorting::START-->
+    <script type="text/javascript">
+      window.Laravel = {
+        csrfToken: '{{ csrf_token() }}'
+      };
+    </script>
     <script src="{{ asset('assets/js/dragdrop.js') }}"></script>
     <script type="text/javascript">
       document.addEventListener('DOMContentLoaded', () => {
