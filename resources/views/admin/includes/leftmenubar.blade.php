@@ -51,6 +51,13 @@
               </li>
 
               <li class="nav-item">
+                <a href="{{ route('admin.media.index') }}" class="nav-link {{ set_active('admin.media.index') }}">
+                  <i class="nav-icon bi bi-image"></i>
+                  <p>Media Files</p>
+                </a>
+              </li>
+
+              <li class="nav-item">
                 <a href="{{ route('admin.user.index') }}" class="nav-link {{ set_active('admin.user.index') }}">
                   <i class="nav-icon bi bi-people"></i>
                   <p>Users</p>

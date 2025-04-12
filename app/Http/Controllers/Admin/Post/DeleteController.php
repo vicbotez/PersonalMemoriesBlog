@@ -15,7 +15,7 @@ class DeleteController extends BaseController
 
     $post->delete();
 
-    return redirect()->route('admin.post.index');
+    return redirect()->route('admin.post.index')->with('success', 'Post Deleted.');
 
   }
 

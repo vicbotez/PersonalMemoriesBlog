@@ -121,16 +121,8 @@
             <div class="row">
               <!--begin::Col-->
               <div class="col-lg-12 col-12">
-                <h3>TO DO</h3>
+                <h3>Used Packs</h3>
                 <ul>
-                  <li>add success messages admin:posts/admin:tags/admin:users - on creating or updating data</li>
-                  <li>tags: order manually. Display in admin/members area by manual order</li>
-                  <li>add images from admin</li>
-                  <li>get image url and use it in blog post</li>
-                  <li>Buy domain on godaddy: .online, .site, .xyz</li>
-                  <li>Make a git repository with website on it</li>
-
-
                   <li>HTML EDITOR: https://alex-d.github.io/Trumbowyg/</li>
                   <li>Select While Typing: https://select2.org/</li>
 

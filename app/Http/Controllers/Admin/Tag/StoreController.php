@@ -21,7 +21,7 @@ class StoreController extends Controller
       $tag->restore();
     }
 
-    return redirect()->route('admin.tag.index');
+    return redirect()->route('admin.tag.index')->with('success', 'New Tag Added.');
   }
 
 

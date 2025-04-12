@@ -14,7 +14,7 @@ class UpdateController extends Controller
   public function __invoke(UpdateRequest $request, Tag $tag){
     $data = $request->validated();
     $tag->update($data);
-    return redirect()->route('admin.tag.index');
+    return redirect()->route('admin.tag.index')->with('success', 'Tag Updated.');
   }
 
 

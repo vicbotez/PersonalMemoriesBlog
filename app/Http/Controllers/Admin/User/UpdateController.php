@@ -21,7 +21,7 @@ class UpdateController extends Controller
     }
 
     $user->update($data);
-    return redirect()->route('admin.user.index');
+    return redirect()->route('admin.user.index')->with('success', 'User Updated.');
   }
 
 

@@ -123,15 +123,18 @@
       <!--end::Header-->
 
 @include('admin.includes.leftmenubar')
+
+@include('admin.includes.alerts')
+
 @yield('content')
 
       <!--begin::Footer-->
       <footer class="app-footer">
         <!--begin::To the end-->
-        <div class="float-end d-none d-sm-inline">Anything you want</div>
+        <div class="float-end d-none d-sm-inline">{{ $confBlogTitle }}</div>
         <!--end::To the end-->
         <!--begin::Copyright-->
-        <strong>2025-{{ date('Y') }}</strong> Personal Blog
+        <strong>2025-{{ date('Y') }}</strong> {{ $confBlogName }}
         <!--end::Copyright-->
       </footer>
       <!--end::Footer-->
@@ -251,11 +254,43 @@
     <script src="{{ asset('assets/js/dragdrop.js') }}"></script>
     <script type="text/javascript">
       document.addEventListener('DOMContentLoaded', () => {
-        const sorter = new TableRowSorter('#sortable-table');
+        if (document.querySelector('#sortable-table')) {
+          const sorter = new TableRowSorter('#sortable-table');
+        }
       });
     </script>
     <!--Tags Drag&Drop Sorting::END-->
 
+    <!--Copy Clipoard Media URL::START-->
+    <script type="text/javascript">
+      document.addEventListener('DOMContentLoaded', () => {
+        if(document.querySelectorAll('.copymedia').length > 0 ){
+          
+          let elements = document.querySelectorAll('.copymedia');
+          elements.forEach(function(el){
+            el.addEventListener('click', function(){
+              navigator.clipboard.writeText(el.dataset.url);
+            });
+          });
+
+        }
+      });
+    </script>
+    <!--Copy Clipoard Media URL::END-->
+
+    <!--Hide alert after 5 Seconds::START-->
+    <script type="text/javascript">
+      document.addEventListener('DOMContentLoaded', () => {
+        setTimeout(function () {
+          let alertEl = document.querySelector('.alert');
+          if (alertEl) {
+            let bsAlert = bootstrap.Alert.getOrCreateInstance(alertEl);
+            bsAlert.close();
+          }
+        }, 5000);
+      });
+    </script>
+    <!--Hide alert after 5 Seconds::END-->
 
   </body>
   <!--end::Body-->

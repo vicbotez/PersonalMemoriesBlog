@@ -2,6 +2,13 @@
 /* active menu bar */
 .menu-active{ color: #fff !important; background-color: rgba(255, 255, 255, 0.1); }
 
-/* Create/Edit Posts CarbonCopy  */
+/* Create/Edit Posts Copy to Clipboard  */
 .ccopy{ margin-left: 40px; font-size: 24px; cursor: pointer; color: blue; }
+
+/* View/Edit/Delete/Copy Elements size  */
+.multitemstable .bi{
+  font-size: 24px;
+  cursor: pointer;
+}
+
 

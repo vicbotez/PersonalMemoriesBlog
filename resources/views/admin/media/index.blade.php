@@ -10,15 +10,15 @@
             <!--begin::Row-->
             <div class="row">
               <div class="col-sm-6 d-flex align-items-center">
-                <h3 class="mb-0 me-3">User List</h3>
+                <h3 class="mb-0 me-3">Media List</h3>
 
-                <a href="{{ route('admin.user.create') }}" class="btn btn-primary btn-sm me-3">Add User</a>
+                <a href="{{ route('admin.media.create') }}" class="btn btn-primary btn-sm me-3">Add Media File</a>
 
               </div>
               <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-end">
                   <li class="breadcrumb-item"><a href="{{ route('dashboard') }}">Home</a></li>
-                  <li class="breadcrumb-item active" aria-current="page">User List</li>
+                  <li class="breadcrumb-item active" aria-current="page">Media</li>
                 </ol>
               </div>
             </div>
@@ -34,7 +34,7 @@
             <!--begin::Row-->
             <div class="row">
               <!--begin::Col-->
-              <div class="col-lg-8 col-12">
+              <div class="col-lg-12 col-12">
                 <!--begin::Small Box Widget 2-->
 
 
@@ -43,28 +43,27 @@
 
                       <thead>
                         <tr>
-                          <th>Name</th>
-                          <th>Email</th>
-                          <th>Role</th>
-                          <th colspan="3" class="text-center">Action</th>
+                          <th>Media File</th>
+                          <th>Media URL</th>
+                          <th colspan="4" class="text-center">Action</th>
                         </tr>
                       </thead>
 
                       <tbody>
 
-                        @foreach($users AS $user)
+                        @foreach($media AS $file)
                         <tr class="align-middle">
-                          <td>{{ $user->name }}</td>
-                          <td>{{ $user->email }}</td>
-                          <td>{{ $roles[ $user->role ?? 1 ] }}</td>
-                          <td class="text-end">
-                            <a href="{{ route('admin.user.show', $user->id) }}" class="text-alert"><i class="bi bi-eye"></i></a>
+                          <td><img src="{{ asset('storage/' . $file->url) }}" style="width: 150px;" alt="{{ $file->alt }}" title="{{ $file->alt }}"></td>
+                          <td class="text-break">{{ asset('storage/' . $file->url) }}</a></td>
+                          <td class="text-end text-info"><i class="bi bi-copy copymedia" title="copy to clipboard" data-url="{{ asset('storage/' . $file->url) }}"></i></td>
+                          <td class="text-center">
+                            <a href="{{ route('admin.media.show', $file->id) }}" class="text-alert"><i class="bi bi-eye"></i></a>
                           </td>
                           <td class="text-center">
-                            <a href="{{ route('admin.user.edit', $user->id) }}" class="text-success"><i class="bi bi-pencil-square"></i></a>
+                            <a href="{{ route('admin.media.edit', $file->id) }}" class="text-success"><i class="bi bi-pencil-square"></i></a>
                           </td>
                           <td class="text-left">
-                            <form action="{{ route('admin.user.delete', $user->id) }}" method="POST">
+                            <form action="{{ route('admin.media.delete', $file->id) }}" method="POST">
                               @csrf
                               @method('DELETE')
                               <button type="submit" class="border-0 bg-transparent">
@@ -73,7 +72,7 @@
                             </form>
                           </td>
                           {{--<td>
-                            <input type="checkbox" name="users[]" vallue="{{ $user->id }}">
+                            <input type="checkbox" name="media[]" vallue="{{ $file->id }}">
                           </td>--}}
                         </tr>
                         @endforeach

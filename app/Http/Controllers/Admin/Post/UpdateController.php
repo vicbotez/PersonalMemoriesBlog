@@ -19,7 +19,7 @@ class UpdateController extends BaseController
     $data['user_id'] = Auth()->user()->id;
     $post = $this->service->update($data, $post);
 
-    return redirect()->route('admin.post.index');
+    return redirect()->route('admin.post.index')->with('success', 'Post Updated.');
 
   }
 

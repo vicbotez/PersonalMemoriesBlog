@@ -50,6 +50,16 @@ Route::middleware(['auth','admin'])->prefix('admin')->namespace('App\Http\Contro
     Route::delete('/{tag}', 'DeleteController')->name('admin.tag.delete');
   });
 
+  Route::prefix('media')->namespace('Media')->group(function(){
+    Route::get('/', 'IndexController')->name('admin.media.index');
+    Route::get('/create', 'CreateController')->name('admin.media.create');
+    Route::post('/create', 'StoreController')->name('admin.media.store');
+    Route::get('/{media}', 'ShowController')->name('admin.media.show');
+    Route::get('/{media}/edit', 'EditController')->name('admin.media.edit');
+    Route::patch('/{media}', 'UpdateController')->name('admin.media.update');
+    Route::delete('/{media}', 'DeleteController')->name('admin.media.delete');
+  });
+
   Route::prefix('users')->namespace('User')->group(function(){
     Route::get('/', 'IndexController')->name('admin.user.index');
     Route::get('/create', 'CreateController')->name('admin.user.create');

@@ -20,7 +20,7 @@ class StoreController extends BaseController
     $data['user_id'] = Auth()->user()->id;
     $this->service->store($data);
 
-    return redirect()->route('admin.post.index');
+    return redirect()->route('admin.post.index')->with('success', 'New Post Added.');
   }
 
 
