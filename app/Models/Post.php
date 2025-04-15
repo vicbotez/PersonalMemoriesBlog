@@ -36,7 +36,8 @@ class Post extends Model
 
   public function getExcerpt()
   {
-    return explode('<!--more-->', html_entity_decode($this->content))[0];
+    $content = str_replace('&lt;!--more--&gt;', '<!--more-->', $this->content);
+    return explode('<!--more-->', content)[0];
   }
 
 }

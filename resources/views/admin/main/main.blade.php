@@ -123,6 +123,10 @@
               <div class="col-lg-12 col-12">
                 <h3>Used Packs</h3>
                 <ul>
+                  <li>Make Glue Posts - always show on top</li>
+                  <li>test anachron for local user</li>
+                  <li>To do sql file backup download via anachron</li>
+
                   <li>HTML EDITOR: https://alex-d.github.io/Trumbowyg/</li>
                   <li>Select While Typing: https://select2.org/</li>
 

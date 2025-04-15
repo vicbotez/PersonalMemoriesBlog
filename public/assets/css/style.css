@@ -11,4 +11,9 @@
   cursor: pointer;
 }
 
+/* text editor height */
+.trumbowyg-box {
+  min-height: 600px;
+}
+
 
