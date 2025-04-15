@@ -12,7 +12,7 @@
 
       <div class="post-short-body">
       
-        {!! html_entity_decode($post->content) !!}
+        {!! $post->content !!}
 
       </div>
 
