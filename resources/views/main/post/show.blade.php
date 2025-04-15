@@ -12,7 +12,7 @@
 
       <div class="post-short-body">
       
-        {!! $post->content !!}
+        {!! str_replace('&lt;!--more--&gt;','',$post->content) !!}
 
       </div>
 
