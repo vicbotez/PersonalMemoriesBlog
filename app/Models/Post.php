@@ -37,7 +37,7 @@ class Post extends Model
   public function getExcerpt()
   {
     $content = str_replace('&lt;!--more--&gt;', '<!--more-->', $this->content);
-    return explode('<!--more-->', content)[0];
+    return explode('<!--more-->', $content)[0];
   }
 
 }
